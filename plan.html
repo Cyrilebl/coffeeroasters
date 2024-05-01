@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <script src="./src/headerFooter.js"></script>
+    <script src="./src/script.js" defer></script>
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Coffeeroasters subscription site</title>
+  </head>
+  <body>
+    <special-header></special-header>
+    <main>
+      <section
+        class="margin intro bg-[url('../assets/plan/mobile/image-hero-blackcup.jpg')] md:bg-[url('../assets/plan/tablet/image-hero-blackcup.jpg')] xl:bg-[url('../assets/plan/desktop/image-hero-blackcup.jpg')]"
+      >
+        <h1>Create a plan</h1>
+        <p class="w-full pt-6 text-neutral3 md:w-[65%] md:pt-8 xl:w-2/5">
+          Build a subscription plan that best fits your needs. We offer an
+          assortment of the best artisan coffees from around the globe delivered
+          fresh to your door.
+        </p>
+      </section>
+      <section
+        class="relative z-10 my-28 flex gap-14 rounded-xl bg-secondary px-6 py-20 text-center text-neutral1 max-md:flex-col md:gap-4 md:px-10 md:py-24 md:text-left xl:mx-20 xl:gap-24 xl:px-20"
+      >
+        <div
+          class="absolute top-28 -z-10 hidden h-0.5 w-4/6 bg-info md:block"
+        ></div>
+        <div>
+          <div
+            class="mb-12 hidden h-8 w-8 rounded-full bg-secondary ring-2 ring-primary md:block xl:mb-16"
+          ></div>
+          <span class="numbers">01</span>
+          <h3 class="my-6 md:w-3/4">Pick your coffee</h3>
+          <p>
+            Select from our evolving range of artisan coffees. Our beans are
+            ethically sourced and we pay fair prices for them. There's new
+            coffees in all profiles every month for you to try out.
+          </p>
+        </div>
+        <div>
+          <div
+            class="mb-12 hidden h-8 w-8 rounded-full bg-secondary ring-2 ring-primary md:block xl:mb-16"
+          ></div>
+          <span class="numbers">02</span>
+          <h3 class="my-6">Choose the frequency</h3>
+          <p>
+            Customize your order frequency, quantity, even your roast style and
+            grind type. Pause, skip or cancel your subscription with no
+            commitment through our online portal.
+          </p>
+        </div>
+        <div>
+          <div
+            class="mb-12 hidden h-8 w-8 rounded-full bg-secondary ring-2 ring-primary md:block xl:mb-16"
+          ></div>
+          <span class="numbers">03</span>
+          <h3 class="my-6 md:w-4/5">Receive and enjoy!</h3>
+          <p>
+            We ship your package within 48 hours, freshly roasted. Sit back and
+            enjoy award-winning world-class coffees curated to provide a
+            distinct tasting experience.
+          </p>
+        </div>
+      </section>
+      <section class="margin">
+        <div class="hidden">
+          <h4>01 Preferences</h4>
+          <h4>02 Bean type</h4>
+          <h4>03 Quantity</h4>
+          <h4>04 Grind option</h4>
+          <h4>05 Deliveries</h4>
+        </div>
+        <div class="text-secondary">
+          <div>
+            <div
+              class="mb-8 flex items-center justify-between md:mb-10 xl:mb-14"
+            >
+              <h2 class="text-neutral2">How do you drink your coffee?</h2>
+              <img
+                class="h-3.5"
+                src="./assets/plan/desktop/icon-arrow.svg"
+                alt="Arrow icon"
+              />
+            </div>
+            <div
+              class="mb-24 flex gap-4 max-md:flex-col md:gap-2.5 xl:mb-20 xl:gap-6"
+            >
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Capsule</h4>
+                <p>Compatible with Nespresso systems and similar brewers</p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Filter</h4>
+                <p>
+                  For pour over or drip methods like Aeropress, Chemex, and V60
+                </p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Espresso</h4>
+                <p>
+                  Dense and finely ground beans for an intense, flavorful
+                  experience
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="mb-8 flex items-center justify-between md:mb-10 xl:mb-14"
+            >
+              <h2 class="text-neutral2">What type of coffee?</h2>
+              <img
+                class="h-3.5"
+                src="./assets/plan/desktop/icon-arrow.svg"
+                alt="Arrow icon"
+              />
+            </div>
+            <div
+              class="mb-24 flex gap-4 max-md:flex-col md:gap-2.5 xl:mb-20 xl:gap-6"
+            >
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Single origin</h4>
+                <p>
+                  Distinct, high quality coffee from a specific family-owned
+                  farm
+                </p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Decaf</h4>
+                <p>
+                  Just like regular coffee, except the caffeine has been removed
+                </p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Blended</h4>
+                <p>
+                  Combination of two or three dark roasted beans of organic
+                  coffees
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="mb-8 flex items-center justify-between md:mb-10 xl:mb-14"
+            >
+              <h2 class="text-neutral2">How much would you like?</h2>
+              <img
+                class="h-3.5"
+                src="./assets/plan/desktop/icon-arrow.svg"
+                alt="Arrow icon"
+              />
+            </div>
+            <div
+              class="mb-24 flex gap-4 max-md:flex-col md:gap-2.5 xl:mb-20 xl:gap-6"
+            >
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">250g</h4>
+                <p>
+                  Perfect for the solo drinker. Yields about 12 delicious cups.
+                </p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">500g</h4>
+                <p>
+                  Perfect option for a couple. Yields about 40 delectable cups.
+                </p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">1000g</h4>
+                <p>
+                  Perfect for offices and events. Yields about 90 delightful
+                  cups.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="mb-8 flex items-center justify-between md:mb-10 xl:mb-14"
+            >
+              <h2 class="text-neutral2">Want us to grind them?</h2>
+              <img
+                class="h-3.5"
+                src="./assets/plan/desktop/icon-arrow.svg"
+                alt="Arrow icon"
+              />
+            </div>
+            <div
+              class="mb-24 flex gap-4 max-md:flex-col md:gap-2.5 xl:mb-20 xl:gap-6"
+            >
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Wholebean</h4>
+                <p>Best choice if you cherish the full sensory experience</p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Filter</h4>
+                <p>
+                  For drip or pour-over coffee methods such as V60 or Aeropress
+                </p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Cafetière</h4>
+                <p>
+                  Course ground beans specially suited for french press coffee
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="mb-8 flex items-center justify-between md:mb-10 xl:mb-14"
+            >
+              <h2 class="text-neutral2">How often should we deliver?</h2>
+              <img
+                class="h-3.5"
+                src="./assets/plan/desktop/icon-arrow.svg"
+                alt="Arrow icon"
+              />
+            </div>
+            <div class="flex gap-4 max-md:flex-col md:gap-2.5 xl:gap-6">
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Every week</h4>
+                <p>$7.20 per shipment. Includes free first-class shipping.</p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Every 2 weeks</h4>
+                <p>$9.60 per shipment. Includes free priority shipping.</p>
+              </div>
+              <div class="plan_card">
+                <h4 class="mb-2 md:mb-6">Every month</h4>
+                <p>$12.00 per shipment. Includes free priority shipping.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-28">
+          <div class="rounded-xl bg-secondary px-6 py-8">
+            <h6 class="mb-2 text-base/7 uppercase text-neutral2/90">
+              Order Summary
+            </h6>
+            <p class="font-secondary text-2xl/10 font-black text-neutral1">
+              “I drink coffee as <span class="text-primary">_____</span>, with a
+              <span class="text-primary">_____</span> type of bean.
+              <span class="text-primary">_____</span> ground ala
+              <span class="text-primary">_____</span>, sent to me
+              <span class="text-primary">_____</span>.”
+            </p>
+          </div>
+          <div class="text-center">
+            <button class="btn mt-14">Create my plan!</button>
+          </div>
+        </div>
+      </section>
+      <div class="hidden">
+        <!-- Modal -->
+        Order Summary “I drink coffee as _____, with a _____ type of bean. _____
+        ground ala _____, sent to me _____.”
+        <p>
+          Is this correct? You can proceed to checkout or go back to plan
+          selection if something is off. Subscription discount codes can also be
+          redeemed at the checkout.
+        </p>
+        <button class="btn mt-14">Checkout - $<span>_____</span> /month</button>
+        <!-- End modal -->
+      </div>
+    </main>
+    <special-footer></special-footer>
+  </body>
+</html>
