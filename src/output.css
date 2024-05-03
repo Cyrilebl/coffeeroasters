@@ -761,6 +761,64 @@ nav{
   justify-content: center;
 }
 
+.accordion_header{
+  margin-bottom: 2rem;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px){
+  .accordion_header{
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px){
+  .accordion_header{
+    margin-bottom: 3.5rem;
+  }
+}
+
+.accordion_header.active{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion_body{
+  margin-bottom: 6rem;
+  display: flex;
+  max-height: 0px;
+  gap: 1rem;
+  overflow: hidden;
+  transition-property: all;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media not all and (min-width: 768px){
+  .accordion_body{
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px){
+  .accordion_body{
+    gap: 0.625rem;
+  }
+}
+
+@media (min-width: 1280px){
+  .accordion_body{
+    margin-bottom: 5rem;
+    gap: 1.5rem;
+  }
+}
+
 .plan_card{
   cursor: pointer;
   border-radius: 0.75rem;
@@ -880,10 +938,6 @@ nav{
   margin-bottom: 5rem;
 }
 
-.mb-24{
-  margin-bottom: 6rem;
-}
-
 .mb-5{
   margin-bottom: 1.25rem;
 }
@@ -894,10 +948,6 @@ nav{
 
 .mb-7{
   margin-bottom: 1.75rem;
-}
-
-.mb-8{
-  margin-bottom: 2rem;
 }
 
 .mt-10{
@@ -1039,8 +1089,8 @@ nav{
   gap: 0.875rem;
 }
 
-.gap-4{
-  gap: 1rem;
+.gap-5{
+  gap: 1.25rem;
 }
 
 .gap-6{
@@ -1051,12 +1101,24 @@ nav{
   gap: 2rem;
 }
 
+.whitespace-nowrap{
+  white-space: nowrap;
+}
+
 .rounded-full{
   border-radius: 9999px;
 }
 
 .rounded-xl{
   border-radius: 0.75rem;
+}
+
+.border-b{
+  border-bottom-width: 1px;
+}
+
+.border-neutral2\/40{
+  border-color: rgb(131 136 143 / 0.4);
 }
 
 .bg-info{
@@ -1189,6 +1251,14 @@ nav{
   padding-bottom: 3.5rem;
 }
 
+.pb-5{
+  padding-bottom: 1.25rem;
+}
+
+.pr-7{
+  padding-right: 1.75rem;
+}
+
 .pt-16{
   padding-top: 4rem;
 }
@@ -1242,6 +1312,10 @@ nav{
   color: rgb(131 136 143 / var(--tw-text-opacity));
 }
 
+.text-neutral2\/50{
+  color: rgb(131 136 143 / 0.5);
+}
+
 .text-neutral2\/90{
   color: rgb(131 136 143 / 0.9);
 }
@@ -1253,6 +1327,10 @@ nav{
 .text-primary{
   --tw-text-opacity: 1;
   color: rgb(14 135 132 / var(--tw-text-opacity));
+}
+
+.text-primary\/40{
+  color: rgb(14 135 132 / 0.4);
 }
 
 .text-secondary{
@@ -1291,9 +1369,18 @@ nav{
   transition-duration: 500ms;
 }
 
+.duration-700{
+  transition-duration: 700ms;
+}
+
 .hover\:text-neutral1:hover{
   --tw-text-opacity: 1;
   color: rgb(254 252 247 / var(--tw-text-opacity));
+}
+
+.hover\:text-neutral2:hover{
+  --tw-text-opacity: 1;
+  color: rgb(131 136 143 / var(--tw-text-opacity));
 }
 
 .hover\:text-secondary:hover{
@@ -1305,7 +1392,15 @@ nav{
   fill: #FDD6BA;
 }
 
+.group:hover .group-hover\:text-primary\/70{
+  color: rgb(14 135 132 / 0.7);
+}
+
 @media not all and (min-width: 1280px){
+  .max-xl\:hidden{
+    display: none;
+  }
+
   .max-xl\:flex-col{
     flex-direction: column;
   }
@@ -1394,10 +1489,6 @@ nav{
     margin-bottom: 0px;
   }
 
-  .md\:mb-10{
-    margin-bottom: 2.5rem;
-  }
-
   .md\:mb-11{
     margin-bottom: 2.75rem;
   }
@@ -1408,6 +1499,10 @@ nav{
 
   .md\:mb-6{
     margin-bottom: 1.5rem;
+  }
+
+  .md\:mt-10{
+    margin-top: 2.5rem;
   }
 
   .md\:mt-5{
@@ -1473,14 +1568,6 @@ nav{
     gap: 4rem;
   }
 
-  .md\:gap-2{
-    gap: 0.5rem;
-  }
-
-  .md\:gap-2\.5{
-    gap: 0.625rem;
-  }
-
   .md\:gap-4{
     gap: 1rem;
   }
@@ -1512,6 +1599,11 @@ nav{
   .md\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .md\:px-11{
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
   }
 
   .md\:px-12{
@@ -1698,10 +1790,6 @@ nav{
     margin-bottom: 10rem;
   }
 
-  .xl\:mb-14{
-    margin-bottom: 3.5rem;
-  }
-
   .xl\:mb-16{
     margin-bottom: 4rem;
   }
@@ -1712,6 +1800,10 @@ nav{
 
   .xl\:mb-36{
     margin-bottom: 9rem;
+  }
+
+  .xl\:mb-40{
+    margin-bottom: 10rem;
   }
 
   .xl\:mb-48{
@@ -1758,6 +1850,10 @@ nav{
     margin-top: 330px;
   }
 
+  .xl\:flex{
+    display: flex;
+  }
+
   .xl\:w-11\/12{
     width: 91.666667%;
   }
@@ -1794,10 +1890,6 @@ nav{
     gap: 8rem;
   }
 
-  .xl\:gap-6{
-    gap: 1.5rem;
-  }
-
   .xl\:gap-7{
     gap: 1.75rem;
   }
@@ -1820,6 +1912,11 @@ nav{
 
   .xl\:p-12{
     padding: 3rem;
+  }
+
+  .xl\:px-16{
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .xl\:px-20{
@@ -1851,6 +1948,10 @@ nav{
 
   .xl\:text-center{
     text-align: center;
+  }
+
+  .xl\:text-right{
+    text-align: right;
   }
 }
 

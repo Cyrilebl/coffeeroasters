@@ -55,7 +55,19 @@
     @apply flex items-center justify-center;
   }
 
+  .accordion_header {
+    @apply mb-8 flex cursor-pointer items-center justify-between md:mb-10 xl:mb-14;
+  }
+
+  .accordion_header.active {
+    @apply transition duration-700 ease-in-out;
+  }
+
+  .accordion_body {
+    @apply mb-24 flex max-h-0 gap-4 overflow-hidden transition-all duration-700 ease-in-out max-md:flex-col md:gap-2.5 xl:mb-20 xl:gap-6;
+  }
+
   .plan_card {
-    @apply bg-neutral4 cursor-pointer rounded-xl p-6 duration-700 hover:bg-info md:pb-20 md:pt-8 xl:px-7;
+    @apply cursor-pointer rounded-xl bg-neutral4 p-6 duration-700 hover:bg-info  md:pb-20 md:pt-8 xl:px-7;
   }
 }
