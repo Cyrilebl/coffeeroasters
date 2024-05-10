@@ -20,84 +20,110 @@ menu.addEventListener("click", () => {
   }
 });
 
-const accordionHeader = document.querySelectorAll(".accordion_header");
-const steps = document.querySelectorAll(".accordion_steps");
+// Accordion
+
+const accordionHeaders = document.querySelectorAll(".accordion_header");
+const accordionSteps = document.querySelectorAll(".accordion_steps");
 
 let activeHeader = null;
 
-accordionHeader.forEach((header) => {
+accordionHeaders.forEach((header, index) => {
   header.addEventListener("click", () => {
     const isActive = header.classList.contains("active");
     const accordionBody = header.nextElementSibling;
 
-    if (activeHeader && activeHeader !== header) {
-      activeHeader.classList.remove("active");
-      const activeH2 = activeHeader.querySelector("h2");
-      if (activeH2) {
-        activeH2.classList.remove("text-secondary");
-        activeH2.classList.add("text-neutral2");
-      }
-      activeHeader.nextElementSibling.style.maxHeight = 0;
-    }
-
-    header.classList.toggle("active");
-
-    const h2Element = header.querySelector("h2");
-    if (h2Element) {
-      if (header.classList.contains("active")) {
-        h2Element.classList.remove("text-neutral2");
-        h2Element.classList.add("text-secondary");
-      } else {
-        h2Element.classList.remove("text-secondary");
-        h2Element.classList.add("text-neutral2");
-      }
-    }
-
-    accordionBody.style.maxHeight = isActive
-      ? 0
-      : accordionBody.scrollHeight + "px";
-
-    activeHeader = isActive ? null : header;
-  });
-});
-
-//   const choice = question.querySelector(".inactive");
-//   choice.classList.remove("inactive");
-//   choice.classList.add("active");
-//   question.querySelector("h2").classList.add("text-secondary");
-
-//   steps.forEach((step, stepIndex) => {
-//     if (index !== stepIndex) {
-//       step.classList.remove("text-secondary");
-//       step
-//         .querySelector("span")
-//         .classList.remove("text-primary/40", "text-primary");
-//     } else {
-//       step.classList.add("text-secondary");
-//       step
-//         .querySelector("span")
-//         .classList.remove("text-primary/40", "text-primary");
-//       step.querySelector("span").classList.add("text-primary");
-//     }
-//   });
-// });
-
-steps.forEach((selected, index) => {
-  selected.addEventListener("click", () => {
-    steps.forEach((step) => {
-      accordion[index].click();
+    accordionSteps.forEach((step) => {
       step.classList.remove("text-secondary");
       step
         .querySelector("span")
         .classList.remove("text-primary/40", "text-primary");
     });
+
+    if (activeHeader) {
+      activeHeader.classList.remove("active");
+      activeHeader.querySelector("h2").classList.remove("active");
+      activeHeader.nextElementSibling.classList.remove("active");
+    }
+
+    if (!isActive) {
+      const activeStep = accordionSteps[index];
+      activeStep.querySelector("span").classList.add("text-primary");
+      activeStep.classList.add("text-secondary");
+
+      header.classList.add("active");
+      setTimeout(() => {
+        header.querySelector("h2").classList.add("active");
+        accordionBody.classList.add("active");
+      }, "150");
+    }
+
+    activeHeader = isActive ? null : header;
+  });
+});
+
+accordionSteps.forEach((selected, index) => {
+  selected.addEventListener("click", () => {
+    setTimeout(() => {
+      accordionHeaders[index].click();
+    }, "100");
+    accordionHeaders[index - 1].scrollIntoView({ behavior: "smooth" });
+
+    accordionSteps.forEach((step) => {
+      step.classList.remove("text-secondary");
+      step
+        .querySelector("span")
+        .classList.remove("text-primary/40", "text-primary");
+    });
+
     selected.classList.add("text-secondary");
     selected.querySelector("span").classList.add("text-primary");
-    const associatedAccordionSection = document.querySelector(
-      `.accordion_question(${index})`,
-    );
-    if (associatedAccordionSection) {
-      associatedAccordionSection.scrollIntoView({ behavior: "smooth" });
-    }
+  });
+});
+
+const accordionBody = document.querySelectorAll(".accordion_body");
+
+accordionBody.forEach((body, index) => {
+  let activeCard = null;
+  const cards = body.querySelectorAll(".plan_card");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.add("bg-primary");
+      card.classList.add("text-neutral1");
+      card.classList.remove("hover:bg-info");
+
+      if (index === 0) {
+        const habit = document.querySelector(".habit");
+        habit.innerText = card.querySelector("h4").textContent;
+      }
+
+      if (index === 1) {
+        const type = document.querySelector(".type");
+        type.innerText = card.querySelector("h4").textContent;
+      }
+
+      if (index === 2) {
+        const quantity = document.querySelector(".quantity");
+        quantity.innerText = card.querySelector("h4").textContent;
+      }
+
+      if (index === 3) {
+        const grind = document.querySelector(".grind");
+        grind.innerText = card.querySelector("h4").textContent;
+      }
+
+      if (index === 4) {
+        const delivery = document.querySelector(".delivery");
+        delivery.innerText = card.querySelector("h4").textContent;
+      }
+
+      if (activeCard && activeCard !== card) {
+        activeCard.classList.remove("bg-primary");
+        activeCard.classList.remove("text-neutral1");
+        activeCard.classList.add("hover:bg-info");
+      }
+
+      activeCard = card;
+    });
   });
 });
