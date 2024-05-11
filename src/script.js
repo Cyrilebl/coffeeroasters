@@ -12,11 +12,13 @@ menu.addEventListener("click", () => {
     menuState = "close";
     nav.classList.remove("opacity-0");
     nav.classList.remove("-translate-y-32");
+    nav.classList.add("h-screen");
   } else {
     menu.src = "./assets/shared/mobile/icon-hamburger.svg";
     menuState = "menu";
     nav.classList.add("opacity-0");
     nav.classList.add("-translate-y-32");
+    nav.classList.remove("h-screen");
   }
 });
 
@@ -81,49 +83,63 @@ accordionSteps.forEach((selected, index) => {
 });
 
 const accordionBody = document.querySelectorAll(".accordion_body");
+let allFilled = false;
 
 accordionBody.forEach((body, index) => {
   let activeCard = null;
   const cards = body.querySelectorAll(".plan_card");
 
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      card.classList.add("bg-primary");
-      card.classList.add("text-neutral1");
-      card.classList.remove("hover:bg-info");
+  const elementClasses = [
+    ".habit",
+    ".type",
+    ".quantity",
+    ".grind",
+    ".delivery",
+  ];
 
-      if (index === 0) {
-        const habit = document.querySelector(".habit");
-        habit.innerText = card.querySelector("h4").textContent;
-      }
+  elementClasses.forEach((className, idx) => {
+    const element = document.querySelector(className);
+    if (element) {
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          card.classList.add("bg-primary");
+          card.classList.add("text-neutral1");
+          card.classList.remove("hover:bg-info");
 
-      if (index === 1) {
-        const type = document.querySelector(".type");
-        type.innerText = card.querySelector("h4").textContent;
-      }
+          const content = card.querySelector("h4").textContent;
+          if (index === idx) {
+            element.innerText = content;
+          }
 
-      if (index === 2) {
-        const quantity = document.querySelector(".quantity");
-        quantity.innerText = card.querySelector("h4").textContent;
-      }
+          if (activeCard && activeCard !== card) {
+            activeCard.classList.remove("bg-primary");
+            activeCard.classList.remove("text-neutral1");
+            activeCard.classList.add("hover:bg-info");
+          }
 
-      if (index === 3) {
-        const grind = document.querySelector(".grind");
-        grind.innerText = card.querySelector("h4").textContent;
-      }
+          activeCard = card;
 
-      if (index === 4) {
-        const delivery = document.querySelector(".delivery");
-        delivery.innerText = card.querySelector("h4").textContent;
-      }
+          const filledElements = document.querySelectorAll(
+            ".habit, .type, .quantity, .grind, .delivery",
+          );
+          allFilled = Array.from(filledElements).every(
+            (elem) => elem.innerText.trim() !== "_____",
+          );
 
-      if (activeCard && activeCard !== card) {
-        activeCard.classList.remove("bg-primary");
-        activeCard.classList.remove("text-neutral1");
-        activeCard.classList.add("hover:bg-info");
-      }
+          const btn = document.querySelector(".plan");
 
-      activeCard = card;
-    });
+          if (allFilled) {
+            btn.classList.remove("inactive-btn");
+            btn.classList.add("btn");
+          }
+
+          btn.addEventListener("click", () => {
+            const modul = document.querySelector(".module");
+            modul.classList.remove("hidden");
+            modul.classList.add("flex");
+          });
+        });
+      });
+    }
   });
 });

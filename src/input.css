@@ -48,7 +48,11 @@
   }
 
   .btn {
-    @apply rounded-md bg-primary px-8 py-3.5 font-secondary text-lg/[25px] font-black text-neutral1 duration-500  hover:bg-primary hover:brightness-150 focus:scale-95;
+    @apply rounded-md bg-primary px-8 py-3.5 font-secondary text-lg/[25px] font-black text-neutral1 duration-500 hover:bg-primary hover:brightness-150 focus:scale-95;
+  }
+
+  .inactive-btn {
+    @apply cursor-not-allowed rounded-md bg-neutral2 px-8 py-3.5 font-secondary text-lg/[25px] font-black text-neutral1;
   }
 
   .flex-center {

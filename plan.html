@@ -292,6 +292,9 @@
               </div>
             </div>
           </div>
+
+          <!-- Order summary -->
+
           <div class="my-28 md:my-36 xl:mb-40 xl:mt-20">
             <div
               class="rounded-xl bg-secondary px-6 py-8 md:px-11 md:py-7 xl:px-16"
@@ -300,7 +303,7 @@
                 Order Summary
               </h6>
               <p class="font-secondary text-2xl/10 font-black text-neutral1">
-                “I drink coffee as
+                “I drink my coffee as
                 <span class="habit text-primary">_____</span>, with a
                 <span class="type text-primary">_____</span> type of bean.
                 <span class="quantity text-primary">_____</span> ground ala
@@ -309,27 +312,45 @@
               </p>
             </div>
             <div class="mt-14 text-center md:mt-10 xl:text-right">
-              <button
-                class="cursor-not-allowed rounded-md bg-neutral2 px-8 py-3.5 font-secondary text-lg/[25px] font-black text-neutral1"
-              >
-                Create my plan!
-              </button>
+              <button class="plan inactive-btn">Create my plan!</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module Order -->
+
+        <div
+          class="module absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 flex-col rounded-xl bg-neutral1"
+        >
+          <h2 class="rounded-t-xl bg-secondary px-6 py-7 md:px-14 md:py-12">
+            Order Summary
+          </h2>
+          <div class="m-6 mt-10 md:m-14">
+            <p class="font-secondary text-2xl/10 font-black text-neutral2">
+              “I drink my coffee as
+              <span class="text-primary">_____</span>, with a
+              <span class="text-primary">_____</span> type of bean.
+              <span class="text-primary">_____</span> ground ala
+              <span class="text-primary">_____</span>, sent to me
+              <span class="text-primary">_____</span>.”
+            </p>
+            <p class="text-secondary md:mt-2">
+              Is this correct? You can proceed to checkout or go back to plan
+              selection if something is off. Subscription discount codes can
+              also be redeemed at the checkout.
+            </p>
+            <div
+              class="mt-6 flex items-center gap-5 text-center text-secondary max-md:hidden md:mt-12 md:gap-3.5"
+            >
+              <h3>$<span>_____</span>/ mo</h3>
+              <button class="btn">Checkout</button>
+            </div>
+            <div class="mt-6 text-center md:hidden">
+              <button class="btn">Checkout - $_____/ mo</button>
             </div>
           </div>
         </div>
       </section>
-      <div class="hidden">
-        <!-- Modal -->
-        Order Summary “I drink coffee as _____, with a _____ type of bean. _____
-        ground ala _____, sent to me _____.”
-        <p>
-          Is this correct? You can proceed to checkout or go back to plan
-          selection if something is off. Subscription discount codes can also be
-          redeemed at the checkout.
-        </p>
-        <button class="btn mt-14">Checkout - $<span>_____</span> /month</button>
-        <!-- End modal -->
-      </div>
     </main>
     <special-footer></special-footer>
   </body>

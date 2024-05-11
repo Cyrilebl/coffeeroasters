@@ -11,7 +11,7 @@ class specialHeader extends HTMLElement {
         />
       </a>
       <nav
-        class="nav_mobile absolute left-1/2 top-14 flex w-full h-screen -translate-x-1/2 -translate-y-32 flex-col gap-8 text-center opacity-0 duration-500 md:static md:left-0 md:size-auto md:-translate-x-0 md:-translate-y-0 md:flex-row md:pt-0 md:opacity-100"
+        class="nav_mobile absolute left-1/2 top-14 flex w-full -translate-x-1/2 -translate-y-32 flex-col gap-8 text-center opacity-0 duration-500 md:static md:left-0 md:size-auto md:-translate-x-0 md:-translate-y-0 md:flex-row md:pt-0 md:opacity-100"
       >
         <a class="duration-300 hover:text-secondary" href="index.html">Home</a>
         <a class="duration-300 hover:text-secondary" href="about.html">About us</a>
