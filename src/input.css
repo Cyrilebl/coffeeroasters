@@ -78,4 +78,8 @@
   .plan_card {
     @apply cursor-pointer rounded-xl bg-neutral4 p-6 text-secondary duration-500 md:pb-20 md:pt-8 xl:px-7;
   }
+
+  .body-bg {
+    @apply after:fixed after:left-0 after:top-0 after:z-30 after:h-screen after:w-full after:bg-neutral-400/40 after:content-[''];
+  }
 }

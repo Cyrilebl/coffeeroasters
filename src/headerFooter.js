@@ -1,7 +1,7 @@
 class specialHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<header
-      class="sticky top-0 z-50 flex items-center justify-between bg-neutral1 px-6 py-4 md:px-10 md:py-7 lg:px-20 lg:py-10"
+      class="sticky top-0 z-30 flex items-center justify-between bg-neutral1 px-6 py-4 md:px-10 md:py-7 lg:px-20 lg:py-10"
     >
       <a href="index.html">
         <img

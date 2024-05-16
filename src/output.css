@@ -862,8 +862,24 @@ nav{
   }
 }
 
+.body-bg::after{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 30;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(163 163 163 / 0.4);
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
 .static{
   position: static;
+}
+
+.fixed{
+  position: fixed;
 }
 
 .absolute{
@@ -902,48 +918,16 @@ nav{
   top: 7rem;
 }
 
-.bottom-0{
-  bottom: 0px;
+.top-\[15\%\]{
+  top: 15%;
 }
 
-.bottom-10{
-  bottom: 2.5rem;
+.top-\[20\%\]{
+  top: 20%;
 }
 
-.bottom-40{
-  bottom: 10rem;
-}
-
-.bottom-64{
-  bottom: 16rem;
-}
-
-.top-64{
-  top: 16rem;
-}
-
-.bottom-3{
-  bottom: 0.75rem;
-}
-
-.top-10{
-  top: 2.5rem;
-}
-
-.-top-10{
-  top: -2.5rem;
-}
-
-.-top-12{
-  top: -3rem;
-}
-
-.-top-14{
-  top: -3.5rem;
-}
-
-.top-1\/2{
-  top: 50%;
+.top-\[10\%\]{
+  top: 10%;
 }
 
 .-z-10{
@@ -956,6 +940,10 @@ nav{
 
 .z-10{
   z-index: 10;
+}
+
+.z-30{
+  z-index: 30;
 }
 
 .z-50{
@@ -979,21 +967,6 @@ nav{
 .my-6{
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.mx-6{
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.my-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.my-9{
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem;
 }
 
 .mb-12{
@@ -1105,8 +1078,8 @@ nav{
   width: 100%;
 }
 
-.w-\[300\]{
-  width: 300;
+.w-4\/5{
+  width: 80%;
 }
 
 .max-w-\[255px\]{
@@ -1120,11 +1093,6 @@ nav{
 
 .-translate-y-32{
   --tw-translate-y: -8rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-1\/2{
-  --tw-translate-x: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1318,14 +1286,14 @@ nav{
   padding-bottom: 1rem;
 }
 
-.py-8{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .py-7{
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
+}
+
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-1{
@@ -1447,6 +1415,18 @@ nav{
   opacity: 0;
 }
 
+.shadow-xl{
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-2xl{
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .ring-2{
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1509,14 +1489,6 @@ nav{
 }
 
 @media not all and (min-width: 768px){
-  .max-md\:block{
-    display: block;
-  }
-
-  .max-md\:flex{
-    display: flex;
-  }
-
   .max-md\:hidden{
     display: none;
   }
@@ -1584,6 +1556,10 @@ nav{
     left: 0px;
   }
 
+  .md\:top-\[15\%\]{
+    top: 15%;
+  }
+
   .md\:m-14{
     margin: 3.5rem;
   }
@@ -1623,20 +1599,16 @@ nav{
     margin-top: 2.5rem;
   }
 
+  .md\:mt-2{
+    margin-top: 0.5rem;
+  }
+
   .md\:mt-5{
     margin-top: 1.25rem;
   }
 
   .md\:mt-56{
     margin-top: 14rem;
-  }
-
-  .md\:mt-12{
-    margin-top: 3rem;
-  }
-
-  .md\:mt-2{
-    margin-top: 0.5rem;
   }
 
   .md\:block{
@@ -1706,14 +1678,6 @@ nav{
     gap: 2.25rem;
   }
 
-  .md\:gap-3{
-    gap: 0.75rem;
-  }
-
-  .md\:gap-3\.5{
-    gap: 0.875rem;
-  }
-
   .md\:bg-\[url\(\'\.\.\/assets\/about\/tablet\/bg-quality\.png\'\)\]{
     background-image: url('../assets/about/tablet/bg-quality.png');
   }
@@ -1750,6 +1714,11 @@ nav{
     padding-right: 3.5rem;
   }
 
+  .md\:py-12{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .md\:py-24{
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -1758,11 +1727,6 @@ nav{
   .md\:py-7{
     padding-top: 1.75rem;
     padding-bottom: 1.75rem;
-  }
-
-  .md\:py-12{
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 
   .md\:pb-1{
@@ -1812,6 +1776,10 @@ nav{
     bottom: 4rem;
   }
 
+  .lg\:top-\[20\%\]{
+    top: 20%;
+  }
+
   .lg\:mb-24{
     margin-bottom: 6rem;
   }
@@ -1838,6 +1806,10 @@ nav{
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:w-1\/2{
+    width: 50%;
   }
 
   .lg\:flex-row{

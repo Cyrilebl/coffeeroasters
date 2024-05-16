@@ -27,6 +27,8 @@ menu.addEventListener("click", () => {
 const accordionHeaders = document.querySelectorAll(".accordion_header");
 const accordionSteps = document.querySelectorAll(".accordion_steps");
 
+// Open the accordion on title click and close the previous one.
+
 let activeHeader = null;
 
 accordionHeaders.forEach((header, index) => {
@@ -34,6 +36,7 @@ accordionHeaders.forEach((header, index) => {
     const isActive = header.classList.contains("active");
     const accordionBody = header.nextElementSibling;
 
+    // Colors config
     accordionSteps.forEach((step) => {
       step.classList.remove("text-secondary");
       step
@@ -63,13 +66,17 @@ accordionHeaders.forEach((header, index) => {
   });
 });
 
+// Open the accordion by clicking on the left step indicators, and automatically navigate to each one
+
 accordionSteps.forEach((selected, index) => {
   selected.addEventListener("click", () => {
+    // Accordion config
     setTimeout(() => {
       accordionHeaders[index].click();
     }, "100");
     accordionHeaders[index - 1].scrollIntoView({ behavior: "smooth" });
 
+    // Colors config
     accordionSteps.forEach((step) => {
       step.classList.remove("text-secondary");
       step
@@ -81,6 +88,8 @@ accordionSteps.forEach((selected, index) => {
     selected.querySelector("span").classList.add("text-primary");
   });
 });
+
+// Fill the summary based on the user's choices
 
 const accordionBody = document.querySelectorAll(".accordion_body");
 let allFilled = false;
@@ -134,12 +143,36 @@ accordionBody.forEach((body, index) => {
           }
 
           btn.addEventListener("click", () => {
-            const modul = document.querySelector(".module");
-            modul.classList.remove("hidden");
-            modul.classList.add("flex");
+            const checkout = document.querySelector(".module");
+            checkout.classList.remove("hidden");
+            checkout.classList.add("flex");
+
+            document.querySelector("body").classList.add("body-bg");
+
+            const moduleSummary = document.querySelector(".module_summary");
+            const summary = document.querySelector(".summary").innerHTML;
+            moduleSummary.innerHTML = summary;
           });
+
+          // Open the next accordion and close the current one
+          if (index < accordionHeaders.length - 1) {
+            accordionHeaders[index + 1].click();
+          }
         });
       });
     }
+  });
+});
+
+// Restore default properties on module btn click
+
+const moduleBtn = document.querySelectorAll(".module-btn");
+moduleBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const checkout = document.querySelector(".module");
+    checkout.classList.add("hidden");
+    checkout.classList.remove("flex");
+
+    document.querySelector("body").classList.remove("body-bg");
   });
 });
