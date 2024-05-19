@@ -140,19 +140,19 @@ accordionBody.forEach((body, index) => {
           if (allFilled) {
             btn.classList.remove("inactive-btn");
             btn.classList.add("btn");
+
+            btn.addEventListener("click", () => {
+              const checkout = document.querySelector(".module");
+              checkout.classList.remove("hidden");
+              checkout.classList.add("flex");
+
+              document.querySelector("body").classList.add("body-bg");
+
+              const moduleSummary = document.querySelector(".module_summary");
+              const summary = document.querySelector(".summary").innerHTML;
+              moduleSummary.innerHTML = summary;
+            });
           }
-
-          btn.addEventListener("click", () => {
-            const checkout = document.querySelector(".module");
-            checkout.classList.remove("hidden");
-            checkout.classList.add("flex");
-
-            document.querySelector("body").classList.add("body-bg");
-
-            const moduleSummary = document.querySelector(".module_summary");
-            const summary = document.querySelector(".summary").innerHTML;
-            moduleSummary.innerHTML = summary;
-          });
 
           // Open the next accordion and close the current one
           if (index < accordionHeaders.length - 1) {
@@ -161,6 +161,87 @@ accordionBody.forEach((body, index) => {
         });
       });
     }
+  });
+});
+
+// If "Capsule" is selected, hide accordion 3 and update the order summary text
+
+const accordion = document.querySelectorAll(".accordion");
+const cards = document.querySelectorAll(".plan_card");
+
+const capsuleText = document.querySelectorAll(".capsule");
+const grindContent = document.querySelector(".grind");
+
+cards[0].addEventListener("click", () => {
+  accordion[3].classList.add("hidden");
+  capsuleText[0].textContent = "using";
+  capsuleText[1].classList.add("hidden");
+  grindContent.textContent = "empty";
+});
+
+function showAccordion() {
+  accordion[3].classList.remove("hidden");
+  capsuleText[0].textContent = "as";
+  capsuleText[1].classList.remove("hidden");
+  grindContent.textContent = "_____";
+}
+cards[1].addEventListener("click", showAccordion);
+cards[2].addEventListener("click", showAccordion);
+
+// Adjust the price based on the user's selection
+
+const weights = document.querySelectorAll(".weight");
+const price = document.querySelectorAll(".price");
+
+const priceData = {
+  "250g": {
+    "Every Week": "7.20",
+    "Every 2 Weeks": "9.60",
+    "Every Month": "12.00",
+  },
+  "500g": {
+    "Every Week": "13.00",
+    "Every 2 Weeks": "17.50",
+    "Every Month": "22.00",
+  },
+  "1000g": {
+    "Every Week": "22.00",
+    "Every 2 Weeks": "32.00",
+    "Every Month": "42.00",
+  },
+};
+
+weights.forEach((weight) => {
+  weight.addEventListener("click", () => {
+    const selectedWeight = weight.getAttribute("data-weight");
+    price[0].textContent = priceData[selectedWeight]["Every Week"];
+    price[1].textContent = priceData[selectedWeight]["Every 2 Weeks"];
+    price[2].textContent = priceData[selectedWeight]["Every Month"];
+  });
+});
+
+// Display the total price based on the user's selection
+
+const periods = document.querySelectorAll(".period");
+const amounts = document.querySelectorAll(".amount");
+
+function formatPrice(price) {
+  return Number(price).toFixed(2);
+}
+
+periods.forEach((period, index) => {
+  period.addEventListener("click", () => {
+    amounts.forEach((amount) => {
+      if (index === 0) {
+        amount.textContent = formatPrice(price[0].textContent * 4);
+      }
+      if (index === 1) {
+        amount.textContent = formatPrice(price[1].textContent * 2);
+      }
+      if (index === 2) {
+        amount.textContent = price[2].textContent;
+      }
+    });
   });
 });
 

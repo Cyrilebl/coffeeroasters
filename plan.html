@@ -205,21 +205,21 @@
                 />
               </div>
               <div class="accordion_body">
-                <div class="plan_card hover:bg-info">
+                <div class="plan_card weight hover:bg-info" data-weight="250g">
                   <h4 class="mb-2 md:mb-6">250g</h4>
                   <p>
                     Perfect for the solo drinker. Yields about 12 delicious
                     cups.
                   </p>
                 </div>
-                <div class="plan_card hover:bg-info">
+                <div class="plan_card weight hover:bg-info" data-weight="500g">
                   <h4 class="mb-2 md:mb-6">500g</h4>
                   <p>
                     Perfect option for a couple. Yields about 40 delectable
                     cups.
                   </p>
                 </div>
-                <div class="plan_card hover:bg-info">
+                <div class="plan_card weight hover:bg-info" data-weight="1000g">
                   <h4 class="mb-2 md:mb-6">1000g</h4>
                   <p>
                     Perfect for offices and events. Yields about 90 delightful
@@ -277,17 +277,26 @@
                 />
               </div>
               <div class="accordion_body">
-                <div class="plan_card hover:bg-info">
+                <div class="period plan_card hover:bg-info">
                   <h4 class="mb-2 md:mb-6">Every week</h4>
-                  <p>$7.20 per shipment. Includes free first-class shipping.</p>
+                  <p>
+                    $<span class="price">_____</span> per shipment. Includes
+                    free first-class shipping.
+                  </p>
                 </div>
-                <div class="plan_card hover:bg-info">
+                <div class="period plan_card hover:bg-info">
                   <h4 class="mb-2 md:mb-6">Every 2 weeks</h4>
-                  <p>$9.60 per shipment. Includes free priority shipping.</p>
+                  <p>
+                    $<span class="price">_____</span> per shipment. Includes
+                    free priority shipping.
+                  </p>
                 </div>
-                <div class="plan_card hover:bg-info">
+                <div class="period plan_card hover:bg-info">
                   <h4 class="mb-2 md:mb-6">Every month</h4>
-                  <p>$12.00 per shipment. Includes free priority shipping.</p>
+                  <p>
+                    $<span class="price">_____</span> per shipment. Includes
+                    free priority shipping.
+                  </p>
                 </div>
               </div>
             </div>
@@ -305,12 +314,14 @@
               <p
                 class="summary font-secondary text-2xl/10 font-black text-neutral1"
               >
-                “I drink my coffee as
+                “I drink my coffee <span class="capsule">as</span>
                 <span class="habit text-primary">_____</span>, with a
                 <span class="type text-primary">_____</span> type of bean.
-                <span class="quantity text-primary">_____</span> ground ala
-                <span class="grind text-primary">_____</span>, sent to me
-                <span class="delivery text-primary">_____</span>.”
+                <span class="quantity text-primary">_____</span>
+                <span class="capsule">
+                  ground ala
+                  <span class="grind text-primary">_____</span> </span
+                >, sent to me <span class="delivery text-primary">_____</span>.”
               </p>
             </div>
             <div class="mt-14 text-center md:mt-10 xl:text-right">
@@ -339,11 +350,13 @@
             <div
               class="md:mt12 mt-6 flex items-center justify-center gap-5 text-secondary max-md:hidden"
             >
-              <h3>$<span>_____</span>/ mo</h3>
+              <h3>$<span class="amount">_____</span>/ mo</h3>
               <button class="btn module-btn">Checkout</button>
             </div>
             <div class="mt-6 text-center md:hidden">
-              <button class="btn module-btn">Checkout - $_____/ mo</button>
+              <button class="btn module-btn">
+                Checkout - $<span class="amount">_____</span>/ mo
+              </button>
             </div>
           </div>
         </div>
