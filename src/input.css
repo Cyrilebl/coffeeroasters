@@ -32,7 +32,7 @@
 
 @layer components {
   .nav_mobile {
-    @apply bg-gradient-to-b from-neutral1 from-35% to-neutral1/20 pt-16 max-md:font-secondary max-md:text-3xl max-md:font-black max-md:normal-case max-md:text-secondary;
+    @apply bg-gradient-to-b from-neutral1 from-35% to-neutral1/20 text-center max-md:invisible max-md:pt-16 max-md:font-secondary max-md:text-3xl max-md:font-black max-md:normal-case max-md:text-secondary;
   }
 
   .margin {
